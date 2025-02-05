@@ -1,4 +1,4 @@
-# 🧠 Ollama RAG Chatbot
+# 🧠 RAG Chatbot
 
 This project is a **Retrieval-Augmented Generation (RAG) chatbot** powered by **LangChain, Milvus, and Ollama**.  
 Users can upload PDF files, and the system will **extract, chunk, and store the data into Milvus**, allowing the chatbot to retrieve relevant context before generating responses using **DeepSeek-R1**.
@@ -33,9 +33,7 @@ docker-compose -f docker/docker-compose.yml up –build
 ```
 OR start Milvus as a standalone container:
 ```sh
-docker run -d –name milvus 
--p 19530:19530 
-milvusdb/milvus:latest
+docker run -d –name milvus -p 19530:19530 milvusdb/milvus:latest
 ```
 
 #### 🔍 Verify Milvus is Running
