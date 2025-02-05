@@ -23,9 +23,9 @@ docker --version
 ### **2️⃣ Start Milvus (Vector Database)**
 Milvus is essential for storing vectorized document chunks.  
 If **Milvus is not running**, you will get errors like:
-
+```sh
 pymilvus.exceptions.MilvusException: Failed to connect to Milvus
-
+```
 #### 👉 Start Milvus using Docker
 If using Docker, run:
 ```sh
