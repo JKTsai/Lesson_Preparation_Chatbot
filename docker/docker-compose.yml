@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./docker
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../src:/app/src
+    environment:
+      - VECTOR_DB_HOST=milvus
+      - VECTOR_DB_PORT=19530
+    depends_on:
+      - milvus
+      - ollama
+
+  milvus:
+    image: milvusdb/milvus:latest
+    container_name: milvus
+    ports:
+      - "19530:19530"
+      - "19121:19121"
+    volumes:
+      - ./milvus_data:/var/lib/milvus
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama_models:/root/.ollama
+    restart: always
