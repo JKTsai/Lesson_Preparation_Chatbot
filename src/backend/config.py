@@ -10,10 +10,10 @@ load_dotenv()
 VECTOR_DB_HOST = os.getenv("VECTOR_DB_HOST", "localhost")
 VECTOR_DB_PORT = int(os.getenv("VECTOR_DB_PORT", "19530"))
 
-# Ollama LLM 配置
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "deepseek-r1:3b")
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-OLLAMA_TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE", "0.3"))
+# LLM
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
+OPENAI_TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.3"))
+
 
 # 其他配置（可擴充）
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "200"))  # 文本切割大小
